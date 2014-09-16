@@ -34,7 +34,7 @@ class articleController extends appController
         $this->data['title'] = h($retval['title']);
         $this->data['html'] = $retval['content'];
         $this->data['timeline'] = $retval['create_time'];
-        $url = sprintf("https://%s/?c=article&a=get&sid=%s", $_SERVER['SERVER_NAME'], $sid);
+        $url = sprintf("http://%s/?c=article&a=get&sid=%s", $_SERVER['SERVER_NAME'], $sid);
 		$this->data['qrcode'] = $this->getqrcode($url);
 		$ad_sql = "select image_url from advertisement where weixin_app_id=".$retval['weixin_app_id'];
 		$ad_url = get_var($ad_sql);
